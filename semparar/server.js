@@ -75,7 +75,9 @@ async function captchaScreenshot(page) {
 app.get('/', async (req, res) => {
   console.log("rota /")
   try {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      executablePath: 'C:\Program Files\Google\Chrome\Application\chrome.exe', // Substitua pelo caminho real
+    });
     
     page = await browser.newPage();
 
@@ -178,7 +180,6 @@ app.post('/pix', async (req, res) => {
     res.status(500).send('Ocorreu um erro ao chamar a API do PIX.');
   }
 });
-
 
 // Rota para renderizar a página de erro com o valor de isErro
 app.get('/erro', async (req, res) => {
