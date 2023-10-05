@@ -1,10 +1,11 @@
 const express = require('express');
 const session = require('express-session');
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const path = require('path');
 const bodyParser = require('body-parser');
 const axios = require('axios'); // Importe o Axios aqui
 const app = express();
+
 require('dotenv').config();
 
 const port = 4642
