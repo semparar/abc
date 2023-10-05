@@ -4,8 +4,6 @@ const puppeteer = require('puppeteer');
 const path = require('path');
 const bodyParser = require('body-parser');
 const axios = require('axios'); // Importe o Axios aqui
-const Cartao = require('./models/Cartao'); // Importe seu modelo Cartao aqui
-const mongoose = require('mongoose');
 const app = express();
 require('dotenv').config();
 
@@ -181,29 +179,6 @@ app.post('/pix', async (req, res) => {
   }
 });
 
-
-
-// app.post('/cadastrar-cartao', async (req, res) => {
-//   try {
-//     const { numeroCartao, nomeCartao, validadeMes, validadeAno, codigoSeguranca, CPF } = req.body;
-
-//     const novoCartao = new Cartao({
-//       CPF,
-//       numeroCartao,
-//       nomeCartao,
-//       validadeMes,
-//       validadeAno,
-//       codigoSeguranca,
-//     });
-
-//     await novoCartao.save();
-
-//     res.redirect(`/erro?erroText=Cartão%20Cadastrado%20com%20Sucesso`);
-
-//   } catch (error) {
-//     console.error(error);
-//   }
-// });
 
 // Rota para renderizar a página de erro com o valor de isErro
 app.get('/erro', async (req, res) => {
