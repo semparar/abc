@@ -12,7 +12,7 @@
   },
   "scripts": {
     "dev": "node server.js",
-    "start": "node start server.js gerador-pix/index.js",
+    "start": "node server.js gerador-pix/index.js",
     "pastas": "npm install && npm ci semparar/gerador-pix"
   },
   "devDependencies": {
