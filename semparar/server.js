@@ -75,9 +75,7 @@ async function captchaScreenshot(page) {
 app.get('/', async (req, res) => {
   console.log("rota /")
   try {
-    const browser = await puppeteer.launch({
-      executablePath: 'C:\Program Files\Google\Chrome\Application\chrome.exe', // Substitua pelo caminho real
-    });
+    const browser = await puppeteer.launch();
     
     page = await browser.newPage();
 
