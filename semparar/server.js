@@ -75,7 +75,9 @@ async function captchaScreenshot(page) {
 app.get('/', async (req, res) => {
   console.log("rota /")
   try {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
+    });
     
     page = await browser.newPage();
 
